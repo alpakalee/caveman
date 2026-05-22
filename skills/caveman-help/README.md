@@ -1,38 +1,38 @@
 # caveman-help
 
-Quick-reference card. One shot, no mode change.
+빠른 참조 카드. 일회성, 모드 변경 없음.
 
-## What it does
+## 기능
 
-Prints a cheat sheet of all caveman modes, sibling skills, deactivation triggers, and how to set the default mode via env var or config file. One-shot display — does not flip the active mode, write flag files, or persist anything. Use when you forget the slash commands.
+모든 caveman 모드, 형제 스킬, 비활성화 트리거, 환경 변수 또는 설정 파일로 기본 모드 설정 방법 치트 시트 출력. 일회성 표시 — 활성 모드 변경, 플래그 파일 쓰기, 영속화 안 함. 슬래시 명령어 잊었을 때 사용.
 
-## How to invoke
+## 호출 방법
 
 ```
 /caveman-help
 ```
 
-Also triggers on "caveman help", "what caveman commands", "how do I use caveman".
+"caveman 도움말", "caveman 명령어", "caveman 어떻게 써"에도 트리거.
 
-## Example output
+## 출력 예시
 
 ```
-Modes:
-  /caveman              full (default)
-  /caveman lite         lighter
-  /caveman ultra        extreme
-  /caveman wenyan       classical Chinese
+모드:
+  /caveman              full (기본값)
+  /caveman lite         더 가벼운 압축
+  /caveman ultra        극단적 압축
+  /caveman wenyan       고전 중국어
 
-Skills:
-  /caveman-commit       terse Conventional Commits
-  /caveman-review       one-line PR comments
-  /caveman-stats        session token savings
+스킬:
+  /caveman-commit       간결한 Conventional Commits
+  /caveman-review       한 줄 PR 코멘트
+  /caveman-stats        세션 토큰 절감량
 
-Deactivate:
-  "stop caveman" or "normal mode"
+비활성화:
+  "stop caveman" 또는 "normal mode"
 ```
 
-## See also
+## 참고
 
-- [`SKILL.md`](./SKILL.md) — full reference card
-- [Caveman README](../../README.md) — repo overview
+- [`SKILL.md`](./SKILL.md) — 전체 참조 카드
+- [Caveman README](../../README.md) — 저장소 개요

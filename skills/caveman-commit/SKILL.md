@@ -1,10 +1,9 @@
 ---
 name: caveman-commit
 description: >
-  Ultra-compressed commit message generator. Cuts noise from commit messages while preserving
-  intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when "why"
-  isn't obvious. Use when user says "write a commit", "commit message", "generate commit",
-  "/commit", or invokes /caveman-commit. Auto-triggers when staging changes.
+  울트라 압축 커밋 메시지 생성기. 의도와 이유 보존하면서 노이즈 제거.
+  Conventional Commits 형식. 제목 ≤50자, 본문은 "왜"가 불명확할 때만.
+  사용자가 "커밋 작성", "커밋 메시지", "커밋 생성", "/commit" 또는 /caveman-commit 호출 시 실행.
 ---
 
 Write commit messages terse and exact. Conventional Commits format. No fluff. Why over what.

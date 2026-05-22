@@ -1,10 +1,9 @@
 ---
 name: caveman-review
 description: >
-  Ultra-compressed code review comments. Cuts noise from PR feedback while preserving
-  the actionable signal. Each comment is one line: location, problem, fix. Use when user
-  says "review this PR", "code review", "review the diff", "/review", or invokes
-  /caveman-review. Auto-triggers when reviewing pull requests.
+  울트라 압축 코드 리뷰 코멘트. PR 피드백 노이즈 제거, 실행 가능한 신호 보존.
+  코멘트 한 줄: 위치, 문제, 수정.
+  사용자가 "이 PR 리뷰", "코드 리뷰", "diff 리뷰", "/review" 또는 /caveman-review 호출 시 실행.
 ---
 
 Write code review comments terse and actionable. One line per finding. Location, problem, fix. No throat-clearing.

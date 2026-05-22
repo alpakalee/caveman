@@ -1,10 +1,10 @@
 ---
 name: caveman-compress
 description: >
-  Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format
-  to save input tokens. Preserves all technical substance, code, URLs, and structure.
-  Compressed version overwrites the original file. Human-readable backup saved as FILE.original.md.
-  Trigger: /caveman-compress FILEPATH or "compress memory file"
+  메모리 파일(CLAUDE.md, 할 일 목록, 설정)을 케이브맨 형식으로 압축해 입력 토큰 절감.
+  모든 기술적 내용, 코드, URL, 구조 보존. 압축본이 원본 파일 덮어씀.
+  사람이 읽을 수 있는 백업은 FILE.original.md로 저장.
+  트리거: /caveman-compress 파일경로 또는 "메모리 파일 압축"
 ---
 
 # Caveman Compress

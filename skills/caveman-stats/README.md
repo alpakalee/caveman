@@ -1,30 +1,30 @@
 # caveman-stats
 
-Real session token receipts. No AI estimation.
+실제 세션 토큰 영수증. AI 추정치 없음.
 
-## What it does
+## 기능
 
-Reads the current Claude Code session log directly and reports actual input/output token usage plus estimated savings versus a non-caveman baseline. Numbers come from the JSONL session log on disk — the model itself does not compute or estimate them. Output is injected by the `caveman-mode-tracker` hook, which intercepts `/caveman-stats` and returns the formatted stats as a blocked-decision reason.
+현재 Claude Code 세션 로그를 직접 읽어 실제 입/출력 토큰 사용량과 non-caveman 기준 대비 예상 절감량 보고. 수치는 디스크의 JSONL 세션 로그에서 — 모델이 직접 계산하거나 추정하지 않음. 출력은 `caveman-mode-tracker` hook이 주입, `/caveman-stats`를 가로채 포맷된 통계를 차단 결정 이유로 반환.
 
-Each run also writes a lifetime-savings suffix file used by the statusline badge (`⛏ 12.4k`).
+매 실행 시 상태 표시줄 배지(`⛏ 12.4k`)가 사용하는 라이프타임 절감량 접미사 파일도 기록.
 
-## How to invoke
+## 호출 방법
 
 ```
 /caveman-stats
 ```
 
-## Example output
+## 출력 예시
 
 ```
-Session: 47 turns
-Input:   12,304 tokens
-Output:   3,891 tokens (caveman)
-Baseline: 11,247 tokens (estimated without caveman)
-Saved:    7,356 tokens (~65%)
+세션: 47턴
+입력:   12,304 토큰
+출력:    3,891 토큰 (caveman)
+기준선: 11,247 토큰 (caveman 없이 추정)
+절감:    7,356 토큰 (~65%)
 ```
 
-## See also
+## 참고
 
-- [`SKILL.md`](./SKILL.md) — hook contract and mechanics
-- [Caveman README](../../README.md) — repo overview
+- [`SKILL.md`](./SKILL.md) — hook 계약 및 메커니즘
+- [Caveman README](../../README.md) — 저장소 개요

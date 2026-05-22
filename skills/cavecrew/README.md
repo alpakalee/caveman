@@ -1,41 +1,41 @@
 # cavecrew
 
-Decision guide. When to delegate to caveman subagents instead of doing the work inline.
+결정 가이드. 인라인 작업 대신 케이브맨 서브에이전트에 위임할 때.
 
-## What it does
+## 기능
 
-Tells the main thread when to spawn a caveman-style subagent versus the vanilla equivalent. The win: subagent tool-results inject back into main context verbatim, and caveman output is roughly 1/3 the size of vanilla prose. Across 20 delegations in one session, that is the difference between context exhaustion and finishing the task.
+케이브맨 스타일 서브에이전트와 바닐라 대안 중 언제 스폰할지 메인 스레드에게 알려줌. 핵심 이점: 서브에이전트 도구 결과가 메인 컨텍스트에 그대로 주입되는데, 케이브맨 출력은 바닐라 산문의 약 1/3 크기. 한 세션에서 20번 위임하면 컨텍스트 소진과 작업 완료의 차이가 날 수 있음.
 
-Three subagents:
+서브에이전트 3종:
 
-| Subagent | Job | Use when |
-|----------|-----|----------|
-| `cavecrew-investigator` | Locate code (read-only) | "Where is X defined / what calls Y / list uses of Z" |
-| `cavecrew-builder` | Surgical edit, 1-2 files | Scope is obvious, ≤2 files. Refuses 3+ file scope. |
-| `cavecrew-reviewer` | Diff/file review | One-line findings with severity emoji |
+| 서브에이전트 | 역할 | 사용 시점 |
+|------------|------|----------|
+| `cavecrew-investigator` | 코드 위치 파악 (읽기 전용) | "X가 어디 정의됐나 / Y를 뭐가 호출하나 / Z 사용처 목록" |
+| `cavecrew-builder` | 외과적 편집, 1-2 파일 | 범위 명확, ≤2 파일. 3파일 이상 거부. |
+| `cavecrew-reviewer` | diff/파일 리뷰 | 심각도 이모지 있는 한 줄 발견 사항 |
 
-Use vanilla `Explore` or `Code Reviewer` when you want prose, architecture commentary, or rationale. Use main thread directly for one-line answers and 3+ file refactors.
+산문, 아키텍처 해설, 근거를 원할 때는 바닐라 `Explore` 또는 `Code Reviewer`. 한 줄 답변과 3파일 이상 리팩터는 메인 스레드 직접 처리.
 
-This skill is a decision guide, not a slash command. It activates when the conversation mentions delegation.
+이 스킬은 결정 가이드, 슬래시 명령어 아님. 대화에서 위임 언급 시 활성화.
 
-## How to invoke
+## 호출 방법
 
-Triggers on phrases like "delegate to subagent", "use cavecrew", "spawn investigator", "save context", "compressed agent output".
+"서브에이전트에 위임", "cavecrew 사용", "investigator 스폰", "컨텍스트 절약", "압축된 에이전트 출력" 같은 구문에 트리거.
 
-## Example chaining
+## 연쇄 예시
 
-Locate → fix → verify (most common):
+위치 → 수정 → 검증 (가장 일반적):
 
-1. `cavecrew-investigator` returns site list (`path:line — symbol — note`)
-2. Main thread picks 1-2 sites, hands paths to `cavecrew-builder`
-3. `cavecrew-reviewer` audits the resulting diff
+1. `cavecrew-investigator`가 사이트 목록 반환 (`path:line — symbol — note`)
+2. 메인 스레드가 1-2 사이트 선택, `cavecrew-builder`에 경로 전달
+3. `cavecrew-reviewer`가 결과 diff 감사
 
-Parallel scout: spawn 2-3 `cavecrew-investigator` calls in one message with different angles (defs, callers, tests). Aggregate in main.
+병렬 탐색: 다른 각도(정의, 호출자, 테스트)로 `cavecrew-investigator` 2-3개를 한 메시지에 스폰. 메인에서 집계.
 
-## See also
+## 참고
 
-- [`SKILL.md`](./SKILL.md) — full decision matrix and output contracts
+- [`SKILL.md`](./SKILL.md) — 전체 결정 매트릭스 및 출력 계약
 - [`agents/cavecrew-investigator.md`](../../agents/cavecrew-investigator.md)
 - [`agents/cavecrew-builder.md`](../../agents/cavecrew-builder.md)
 - [`agents/cavecrew-reviewer.md`](../../agents/cavecrew-reviewer.md)
-- [Caveman README](../../README.md) — repo overview
+- [Caveman README](../../README.md) — 저장소 개요

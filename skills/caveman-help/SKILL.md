@@ -1,59 +1,59 @@
 ---
 name: caveman-help
 description: >
-  Quick-reference card for all caveman modes, skills, and commands.
-  One-shot display, not a persistent mode. Trigger: /caveman-help,
-  "caveman help", "what caveman commands", "how do I use caveman".
+  모든 caveman 모드, 스킬, 명령어 빠른 참조 카드.
+  일회성 표시, 지속 모드 아님.
+  트리거: /caveman-help, "caveman 도움말", "caveman 명령어", "caveman 어떻게 써".
 ---
 
-# Caveman Help
+# Caveman 도움말
 
-Display this reference card when invoked. One-shot — do NOT change mode, write flag files, or persist anything. Output in caveman style.
+호출 시 이 참조 카드 표시. 일회성 — 모드 변경, 플래그 파일 쓰기, 영속화 금지. 케이브맨 스타일로 출력.
 
-## Modes
+## 모드
 
-| Mode | Trigger | What change |
-|------|---------|-------------|
-| **Lite** | `/caveman lite` | Drop filler. Keep sentence structure. |
-| **Full** | `/caveman` | Drop articles, filler, pleasantries, hedging. Fragments OK. Default. |
-| **Ultra** | `/caveman ultra` | Extreme compression. Bare fragments. Tables over prose. |
-| **Wenyan-Lite** | `/caveman wenyan-lite` | Classical Chinese style, light compression. |
-| **Wenyan-Full** | `/caveman wenyan` | Full 文言文. Maximum classical terseness. |
-| **Wenyan-Ultra** | `/caveman wenyan-ultra` | Extreme. Ancient scholar on a budget. |
+| 모드 | 트리거 | 변경 내용 |
+|------|--------|----------|
+| **Lite** | `/caveman lite` | 필러 제거. 문장 구조 유지. |
+| **Full** | `/caveman` | 관사, 필러, 인사말, 헤징 제거. 단편 OK. 기본값. |
+| **Ultra** | `/caveman ultra` | 극단적 압축. 나체 단편. 산문 대신 표. |
+| **Wenyan-Lite** | `/caveman wenyan-lite` | 고전 중국어 스타일, 가벼운 압축. |
+| **Wenyan-Full** | `/caveman wenyan` | 완전 文言文. 최대 고전 간결함. |
+| **Wenyan-Ultra** | `/caveman wenyan-ultra` | 극단적. 예산 압박받는 고대 학자. |
 
-Mode stick until changed or session end.
+모드는 변경하거나 세션 종료 시까지 유지.
 
-## Skills
+## 스킬
 
-| Skill | Trigger | What it do |
-|-------|---------|-----------|
-| **caveman-commit** | `/caveman-commit` | Terse commit messages. Conventional Commits. ≤50 char subject. |
-| **caveman-review** | `/caveman-review` | One-line PR comments: `L42: bug: user null. Add guard.` |
-| **caveman-compress** | `/caveman-compress <file>` | Compress .md files to caveman prose. Saves ~46% input tokens. |
-| **caveman-help** | `/caveman-help` | This card. |
+| 스킬 | 트리거 | 기능 |
+|------|--------|------|
+| **caveman-commit** | `/caveman-commit` | 간결한 커밋 메시지. Conventional Commits. 제목 ≤50자. |
+| **caveman-review** | `/caveman-review` | 한 줄 PR 코멘트: `L42: bug: user null. Add guard.` |
+| **caveman-compress** | `/caveman-compress <파일>` | .md 파일을 케이브맨 산문으로 압축. 입력 토큰 ~46% 절감. |
+| **caveman-help** | `/caveman-help` | 이 카드. |
 
-## Deactivate
+## 비활성화
 
-Say "stop caveman" or "normal mode". Resume anytime with `/caveman`.
+"stop caveman" 또는 "normal mode". 언제든 `/caveman`으로 재개.
 
-## Configure Default Mode
+## 기본 모드 설정
 
-Default mode = `full`. Change it:
+기본 모드 = `full`. 변경 방법:
 
-**Environment variable** (highest priority):
+**환경 변수** (최우선):
 ```bash
 export CAVEMAN_DEFAULT_MODE=ultra
 ```
 
-**Config file** (`~/.config/caveman/config.json`):
+**설정 파일** (`~/.config/caveman/config.json`):
 ```json
 { "defaultMode": "lite" }
 ```
 
-Set `"off"` to disable auto-activation on session start. User can still activate manually with `/caveman`.
+`"off"` 설정 시 세션 시작 시 자동 활성화 비활성화. 사용자는 `/caveman`으로 수동 활성화 가능.
 
-Resolution: env var > config file > `full`.
+우선순위: 환경 변수 > 설정 파일 > `full`.
 
-## More
+## 더보기
 
-Full docs: https://github.com/JuliusBrussee/caveman
+전체 문서: https://github.com/alpakalee/caveman

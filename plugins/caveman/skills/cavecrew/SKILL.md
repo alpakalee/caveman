@@ -1,14 +1,11 @@
 ---
 name: cavecrew
 description: >
-  Decision guide for delegating to caveman-style subagents. Tells the main
-  thread WHEN to spawn `cavecrew-investigator` (locate code), `cavecrew-builder`
-  (1-2 file edit), or `cavecrew-reviewer` (diff review) instead of doing the
-  work inline or using vanilla `Explore`. Subagent output is caveman-compressed
-  so the tool-result injected back into main context is ~60% smaller — main
-  context lasts longer across long sessions.
-  Trigger: "delegate to subagent", "use cavecrew", "spawn investigator/builder/reviewer",
-  "save context", "compressed agent output".
+  케이브맨 스타일 서브에이전트 위임 결정 가이드.
+  메인 스레드가 cavecrew-investigator(코드 위치), cavecrew-builder(1-2파일 편집),
+  cavecrew-reviewer(diff 리뷰)를 언제 스폰할지 알려줌.
+  서브에이전트 출력이 케이브맨 압축되어 메인 컨텍스트 주입 크기 ~60% 감소.
+  트리거: "서브에이전트에 위임", "cavecrew 사용", "investigator/builder/reviewer 스폰", "컨텍스트 절약".
 ---
 
 Cavecrew = three subagent presets that emit caveman output. Same job as Anthropic defaults (`Explore`, edit-style agents, reviewer); difference is the tool-result they return is compressed, so main context shrinks per delegation.
